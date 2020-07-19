@@ -6,7 +6,7 @@ class DialogBox
   {
     return  showDialog(
       context: context,
-      barrierDismissible: true,
+      barrierDismissible: true, 
       builder: (BuildContext context) {
         // return object of type Dialog
         return AlertDialog(
