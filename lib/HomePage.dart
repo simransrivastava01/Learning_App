@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage>
   void initState() {
     // TODO: implement noSuchMethod
     super.initState();
-    DatabaseReference postCRef = FirebaseDatabase.instance.reference().child("Posts");
+    DatabaseReference postCRef = FirebaseDatabase.instance.reference().child("Posts"); 
 
 //    postsRef.once().then({DataSnapshot snap)
 //    {
