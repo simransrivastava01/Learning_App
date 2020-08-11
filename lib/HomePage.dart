@@ -1,10 +1,11 @@
-import 'Upload.dart';
+import 'files.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'login.dart';
 import 'register.dart';
 import 'posts.dart';
 import 'chat_screen.dart';
+import 'Upload.dart';
 
 
 //void main() => runApp(HomePage());
@@ -28,23 +29,6 @@ class _HomePageState extends State<HomePage>
     super.initState();
     DatabaseReference postCRef = FirebaseDatabase.instance.reference().child("Posts");
 
-//    postsRef.once().then({DataSnapshot snap)
-//    {
-//      var KEYS = snap.value.keys;
-//      var DATA = snap.value;
-//
-//      postsList.clear();
-//
-//      for(var individualKey in KEYS)
-//        {
-//          Posts posts = new Posts
-//          (
-//           DATA[individualKey]['image'],
-//          );
-//        }
-//    });
-//  }
-
     postCRef.once().then((DataSnapshot snap)
         {
           var keys = snap.value.keys;
@@ -61,7 +45,7 @@ class _HomePageState extends State<HomePage>
               data[individualKey]['date'],
               data[individualKey]['time'],
           );
-          
+
           postedList.add(posts);
         }
       setState(() {
@@ -86,7 +70,7 @@ class _HomePageState extends State<HomePage>
           itemCount: postedList.length,
           itemBuilder: (_,index)
             {
-              return postsUI(postedList[index].image,postedList[index].description,postedList[index].date,postedList[index].time);
+              return postsU(postedList[index].image,postedList[index].description,postedList[index].date,postedList[index].time);
             }
         ),
       ),
@@ -105,7 +89,7 @@ class _HomePageState extends State<HomePage>
 
                 new IconButton(
                   icon: new Icon(Icons.account_circle ),
-                  iconSize: 50,
+                  iconSize: 25,
                   color: Colors.white,
                   onPressed: () {
                     Navigator.pushNamed(context, RegistrationScreen.id);
@@ -114,7 +98,7 @@ class _HomePageState extends State<HomePage>
 
                 new IconButton(
                   icon: new Icon(Icons.person),
-                  iconSize: 50,
+                  iconSize: 25,
                   color: Colors.white,
                   onPressed: () {
                     Navigator.pushNamed(context, LoginScreen.id);
@@ -123,7 +107,7 @@ class _HomePageState extends State<HomePage>
 
                 new IconButton(
                   icon: new Icon(Icons.add_a_photo),
-                  iconSize: 40,
+                  iconSize: 25,
                   color: Colors.white,
                   onPressed: () {
                     Navigator.push
@@ -131,6 +115,7 @@ class _HomePageState extends State<HomePage>
                         context,MaterialPageRoute(builder: (context)
                     {
                       return new UploadPage();
+                      //return new MyApp();
                     }
                     )
                     );
@@ -138,8 +123,27 @@ class _HomePageState extends State<HomePage>
                 ),
 
                 new IconButton(
+                  icon: new Icon(Icons.folder),
+                  iconSize: 25,
+                  color: Colors.white,
+                  onPressed: () {
+                    Navigator.push
+                      (
+                        context,MaterialPageRoute(builder: (context)
+                    {
+                      //return new UploadPage();
+                      return new MyApp();
+                    }
+                    )
+                    );
+                  },
+                ),
+
+
+
+                new IconButton(
                   icon: new Icon(Icons.chat),
-                  iconSize: 40,
+                  iconSize: 25,
                   color: Colors.white,
                   onPressed: () {
                     Navigator.pushNamed(context, ChatScreen.id);
@@ -154,7 +158,7 @@ class _HomePageState extends State<HomePage>
       ),
     );
   }
-  Widget postsUI(String image,String description,String date,String time)
+  Widget postsU(String image,String description,String date,String time)
   {
     return new Card
       (

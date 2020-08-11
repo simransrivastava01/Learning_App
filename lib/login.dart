@@ -4,11 +4,7 @@ import 'rounded_button.dart';
 import 'constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
-import 'package:firebase_database/firebase_database.dart';
-import 'package:firebase_storage/firebase_storage.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'DialogBox.dart';
-import 'chat_screen.dart';
 
 class LoginScreen extends StatefulWidget {
 
