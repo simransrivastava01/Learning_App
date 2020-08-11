@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 class DialogBox
 {
-  information(BuildContext context,String title,String description)
-  {
+  information(BuildContext context,String title,String description)  
+  { 
     return  showDialog(
       context: context,
-      barrierDismissible: true,
+      barrierDismissible: true, 
       builder: (BuildContext context) {
         // return object of type Dialog
         return AlertDialog(
