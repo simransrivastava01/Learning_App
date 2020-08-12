@@ -20,7 +20,7 @@ class _MyAppState extends State<MyApp> {
   bool _multiPick = false;
   FileType _pickingType = FileType.any;
   TextEditingController _controller = new TextEditingController();
-
+ 
   @override
   void initState() {
     super.initState();
