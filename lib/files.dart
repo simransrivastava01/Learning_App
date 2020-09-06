@@ -31,7 +31,7 @@ class _MyAppState extends State<MyApp> {
     setState(() => _loadingPath = true);
     try {
       if (_multiPick) {
-        _path = null;
+        _path = null; 
         _paths = await FilePicker.getMultiFilePath(
             type: _pickingType,
             allowedExtensions: (_extension?.isNotEmpty ?? false)
