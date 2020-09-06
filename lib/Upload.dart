@@ -31,7 +31,7 @@ class _UploadPageState extends State<UploadPage>
     });
   }
 
-  bool validateAndSave()
+  bool validateAndSave() 
   {
     final form = formKey.currentState;
     if(form.validate())
