@@ -32,7 +32,7 @@ class _MyAppState extends State<MyApp> {
     try {
       if (_multiPick) {
         _path = null; 
-        _paths = await FilePicker.getMultiFilePath(
+        _paths = await FilePicker.getMultiFilePath( 
             type: _pickingType,
             allowedExtensions: (_extension?.isNotEmpty ?? false)
                 ? _extension?.replaceAll(' ', '')?.split(',')
